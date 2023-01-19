@@ -36,12 +36,9 @@ export default function Wordle({answer}) {
       return () => {
         window.removeEventListener('keyup', handleKeyup)
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [handleKeyup])
-    
-    useEffect(() => {
-      console.log(guesses, turn, isRight)
-    }, [guesses, turn, isRight])
-    
+   
     return( 
         <Box bg={useColorModeValue('gray.50', 'gray.800')}>
             <Navbar />
