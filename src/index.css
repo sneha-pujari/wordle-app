@@ -11,3 +11,99 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.row > div {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #4299E1;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;  
+  font-weight: bold;
+  font-size: 2.5em;
+  border-radius: 3em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.row > div.green {
+  --background: #38A169;
+  --border-color: #38A169;
+  animation: flip 0.5s ease forwards; 
+}
+
+.row > div.yellow {
+  --background: #ECC94B;
+  --border-color: #ECC94B;
+  animation: flip 0.5s ease forwards; 
+}
+
+.row > div.grey {
+  --background: #A0AEC0;
+  --border-color: #A0AEC0;
+  animation: flip 0.5s ease forwards; 
+}
+
+.row > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.row > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.row > div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.row > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.row.current > div.filled {
+  animation: bounce 0.2s ease-in-out forwards;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    background: #fff;
+    border-color: #4299E1;
+  }
+  45% {
+    transform: rotateX(90deg);
+    background: #fff;
+    border-color: #4299E1;
+  }
+  55%{
+    transform: rotateX(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+    /* text-decoration-color: #eee; */
+  }
+  100% {
+    transform: rotateX(0);
+    background: var(--background);
+    border-color: var(--border-color);
+    color: #eee;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #ddd;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    border-color: #333;
+  }
+}

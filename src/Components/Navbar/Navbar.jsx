@@ -27,9 +27,9 @@ export default function Nav() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Center>
-          </Center> 
-          <Box><Text fontSize='3xl'>WORDLE</Text></Box>
+          {/* <Center>
+          </Center>  */}
+          <Box><Text fontSize='3xl' color = 'blue.500'><b>WORDLE</b></Text></Box>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>

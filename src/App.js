@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
+import Wordle from "./Components/Wordle";
+import answers from "../data/db.json";
 
 function App() {
   const [answer, setAnswer] = useState(null);
+  console.log("answers: ", answers)
   useEffect(() => {
-    fetch('http://localhost:3001/answers')
+    fetch(answers)
     .then(res => res.json())
     .then(json => {
       const random = json[Math.floor(Math.random()*json.length)]
@@ -13,8 +15,7 @@ function App() {
   }, [setAnswer])
   return (
     <div className="App">
-      <Navbar />
-      {answer && <div> answer is: {answer} </div>}
+     <Wordle answer = {answer} />
     </div>
   );
 }
