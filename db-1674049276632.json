@@ -1,0 +1,64 @@
+{
+  "answers": [
+    {
+      "word": "react",
+      "id": 1
+    },
+    {
+      "word": "debug",
+      "id": 2
+    },
+    {
+      "word": "ascii",
+      "id": 3
+    },
+    {
+      "word": "write",
+      "id": 4
+    },
+    {
+      "word": "logic",
+      "id": 5
+    },
+    {
+      "word": "input",
+      "id": 6
+    },
+    {
+      "word": "click",
+      "id": 7
+    },
+    {
+      "word": "block",
+      "id": 8
+    },
+    {
+      "word": "cache",
+      "id": 9
+    },
+    {
+      "word": "close",
+      "id": 10
+    },
+    {
+      "word": "erase",
+      "id": 11
+    },
+    {
+      "word": "field",
+      "id": 12
+    },
+    {
+      "word": "intel",
+      "id": 13
+    },
+    {
+      "word": "login",
+      "id": 14
+    },
+    {
+      "word": "logon",
+      "id": 15
+    }
+  ]
+}
