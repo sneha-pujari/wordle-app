@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { dictionary } from "../Data/Dictionary";
 
 const useWordle = (answer) => {
   
@@ -7,6 +8,7 @@ const useWordle = (answer) => {
     const [currGuess, setCurrGuess] = useState('');
     const [isRight, setIsRight] = useState(false);
     const [history, setHistory] = useState([]);
+    const [usedKeys, setUsedKeys] = useState({});
     
     const guessColour = () => {
         let answerArray = [...answer]
@@ -15,7 +17,7 @@ const useWordle = (answer) => {
         })
         //find green letters
         modifiedGuess.forEach((letter, index) => {
-            if(answerArray[index] == letter.key) {
+            if(answerArray[index] === letter.key) {
                 modifiedGuess[index].color = 'green'
                 answerArray[index] = null
             }
@@ -51,6 +53,7 @@ const useWordle = (answer) => {
         setCurrGuess('')
     }
     const handleKeyup = ({key}) => {
+        console.log("handleKeyUp called: ", key)
         if(key === "Enter") {
             //add guess if turn === 5 and no duplicate words
             if(turn > 5) {
@@ -64,6 +67,10 @@ const useWordle = (answer) => {
             if(currGuess.length !== 5) {
                 console.log("word should be 5 char long")
                 return 
+            }
+            if(!dictionary.includes(currGuess)){
+                console.log("not valid word")
+                return
             }
         const modified = guessColour()
         newGuess(modified)
@@ -84,6 +91,6 @@ const useWordle = (answer) => {
         }
         console.log(key)
     }
-    return {turn, currGuess, guesses, isRight, handleKeyup}
+    return {turn, currGuess, guesses, isRight, handleKeyup, history}
 }
 export default useWordle

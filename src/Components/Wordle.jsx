@@ -3,6 +3,7 @@ import useWordle from "../hooks/useWordle";
 import { useEffect } from "react";
 import Navbar from "./Navbar/Navbar";
 import Matrix from "./Grid/Matrix";
+import Keypad from "./Keypad/Keypad";
 
 export default function Wordle({answer}) {
     const { currGuess, handleKeyup, guesses, isRight, turn } = useWordle(answer)
@@ -23,8 +24,8 @@ export default function Wordle({answer}) {
     return( 
         <div>
             <Navbar />
-            {/* {answer && <div> currGuess is: {currGuess} and {answer}</div>} */}
             <Matrix currGuess = {currGuess} guesses = {guesses} turn = {turn} />
+            <Keypad answer = {answer}/>
         </div>
     )
 }
