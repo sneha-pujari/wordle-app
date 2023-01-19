@@ -27,19 +27,19 @@ code {
   text-transform: uppercase;  
   font-weight: bold;
   font-size: 2.5em;
-  border-radius: 3em;
+  border-radius: 4em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .row > div.green {
-  --background: #38A169;
-  --border-color: #38A169;
+  --background: #2B6CB0;
+  --border-color: #2B6CB0;
   animation: flip 0.5s ease forwards; 
 }
 
 .row > div.yellow {
-  --background: #ECC94B;
-  --border-color: #ECC94B;
+  --background: #F6AD55;
+  --border-color: #F6AD55;
   animation: flip 0.5s ease forwards; 
 }
 
@@ -81,17 +81,17 @@ code {
   align-items: center;  
   border-radius: 6px;
   text-align: center;
-  background-color: #E2E8F0;
   line-height: 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);;
 }
 
 .keypad > div.green {
-  background: #38A169;
+  background: #2B6CB0;
   color: #fff;
   transition: all 0.3s ease-in;
 }
 .keypad > div.yellow {
-  background: #ECC94B;
+  background: #F6AD55;
   color: #fff;
   transition: all 0.3s ease-in;
 }
