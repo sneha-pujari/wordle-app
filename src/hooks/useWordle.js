@@ -50,10 +50,30 @@ const useWordle = (answer) => {
         setTurn((prevTurn) => {
             return prevTurn + 1
         })
+        setUsedKeys((prevUsedKeys) => {
+            let newKeys = {...prevUsedKeys}
+            modifiedGuess.forEach((l) => {
+                const currentColor = newKeys[l.key]
+
+                if(l.color === 'green') {
+                    newKeys[l.key] = 'green'
+                    return 
+                }
+                 if(l.color === 'yellow' && currentColor !== 'green') {
+                    newKeys[l.key] = 'yellow'
+                    return 
+                }
+                if(l.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow') {
+                    newKeys[l.key] = 'grey'
+                    return 
+                }
+            })
+            return newKeys;
+        })
         setCurrGuess('')
     }
     const handleKeyup = ({key}) => {
-        console.log("handleKeyUp called: ", key)
+        console.log("key from handlekeyup: ", key)
         if(key === "Enter") {
             //add guess if turn === 5 and no duplicate words
             if(turn > 5) {
@@ -91,6 +111,6 @@ const useWordle = (answer) => {
         }
         console.log(key)
     }
-    return {turn, currGuess, guesses, isRight, handleKeyup, history}
+    return {turn, currGuess, guesses, isRight, usedKeys, handleKeyup, history}
 }
 export default useWordle
